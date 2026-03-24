@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Entry3D",
+  "version": "1.0",
+  "description": "엔트리3D 만들기",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://playentry.org/project/*",
+        "https://playentry.org/ws/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
