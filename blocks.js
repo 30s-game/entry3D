@@ -1,6 +1,6 @@
 // 비공식 블럭(x, y, z) 정의 및 주입 함수
 (function injectEntryBlocks() {
-    if (typeof Entry === 'undefined' || !Entry.staticBlocks) {
+    if (typeof Entry === 'undefined' || !variableContainer) {
         setTimeout(injectEntryBlocks, 500); // 엔트리가 로드될 때까지 재시도
         return;
     }
