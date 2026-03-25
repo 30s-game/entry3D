@@ -6,7 +6,7 @@
     }
 
     console.log("Entry3D: 비공식 블럭 저장소에서 데이터를 불러옵니다...");
-    Entry.variableContainer.getVariableByName('@3D')?.setValue(1)
+    Entry.variableContainer.getVariableByName('@3D')?.setValue(1)//"@3D"라는 변수를 찾아 그 변수 값을 1로 변경
 
     // 예시: x, y, z 관련 비공식 블럭 추가 로직
     // 실제 엔트리 블럭 구조에 맞게 데이터를 구성하세요.
