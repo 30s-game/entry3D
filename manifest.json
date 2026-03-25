@@ -1,10 +1,11 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 1.0,
   "name": "Entry3D",
   "version": "1.0",
   "description": "엔트리3D 만들기",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
   "action": {
     "default_popup": "popup.html"
@@ -16,6 +17,12 @@
         "https://playentry.org/ws/*"
       ],
       "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["blocks.js"],
+      "matches": ["https://playentry.org/*"]
     }
   ]
 }
