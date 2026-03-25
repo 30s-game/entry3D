@@ -1,16 +1,19 @@
-// 1. 비공식 블럭(x, y, z) 로드 (주소 확인 후 자동 실행)
-console.log("Entry3D: 블럭을 준비합니다.");
+// 1. 페이지 접속 시 비공식 블럭 파일(blocks.js)을 콘솔에 입력하듯 실행
+const script = document.createElement('script');
+script.src = chrome.runtime.getURL('blocks.js');
+(document.head || document.documentElement).appendChild(script);
 
-// 2. 팝업 메시지 수신 시 화면 변환
+console.log("Entry3D: 저장소 주소에서 비공식 블럭을 성공적으로 첨가했습니다.");
+
+// 2. 팝업창에서 오는 3D 제어 신호 수신
 chrome.runtime.onMessage.addListener((request) => {
-  const canvas = document.querySelector('canvas') || document.querySelector('.entryCanvasWrapper');
-  
-  if (canvas) {
+    const canvas = document.querySelector('canvas') || document.querySelector('.entryCanvasWrapper');
+    if (!canvas) return;
+
     if (request.mode === "3D_ON") {
-      canvas.style.transform = "perspective(800px) rotateX(45deg)";
-      canvas.style.transition = "0.5s";
+        canvas.style.transform = "perspective(1000px) rotateX(45deg) rotateY(5deg)";
+        canvas.style.transition = "transform 0.5s";
     } else {
-      canvas.style.transform = "none";
+        canvas.style.transform = "none";
     }
-  }
 });
